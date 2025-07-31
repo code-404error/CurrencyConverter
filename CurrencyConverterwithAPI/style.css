@@ -1,0 +1,186 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-dark: #000000;
+  --text-light: #000000;
+  --text-dark: #ffffff;
+  --btn-bg-light: #007bff;
+  --btn-bg-dark: #444444;
+  --btn-hover-light: #0056b3;
+  --btn-hover-dark: #666666;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.converter {
+  background-color: var(--bg-light);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme .converter {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-theme input,
+.dark-theme select {
+  background-color: #222;
+  color: var(--text-dark);
+  border-color: #555;
+}
+
+button {
+  background-color: var(--btn-bg-light);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover-light);
+}
+
+.dark-theme button {
+  background-color: var(--btn-bg-dark);
+  color: white;
+}
+
+.dark-theme button:hover {
+  background-color: var(--btn-hover-dark);
+}
+
+.selectors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.selectors select {
+  width: 45%;
+}
+
+#swapBtn {
+  width: 40px;
+  padding: 10px;
+  margin: 0 5px;
+  background-color: #6c757d;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#swapBtn:hover {
+  background-color: #5a6268;
+}
+
+.result {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  min-height: 24px;
+  /* Error messages in red */
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.result.error {
+  color: red;
+}
+
+.dark-theme .result {
+  color: var(--text-dark);
+}
+
+.dark-theme .result.error {
+  color: #ff6b6b;
+}
+
+/* Theme toggle button */
+#themeToggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  background-color: var(--btn-bg-light);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  user-select: none;
+  z-index: 1000;
+}
+
+#themeToggle:hover {
+  background-color: var(--btn-hover-light);
+}
+
+.dark-theme #themeToggle {
+  background-color: var(--btn-bg-dark);
+}
+
+.dark-theme #themeToggle:hover {
+  background-color: var(--btn-hover-dark);
+}
+
+#themeToggle svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 400px) {
+  .converter {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .selectors select {
+    width: 44%;
+  }
+}
